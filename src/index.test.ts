@@ -125,7 +125,6 @@ Deno.test("links remain", () => {
 
 Deno.test("memory usage test for large pages", () => {
   const pages = ["hebrew-page.html", "large-collection.html"];
-
   for (const page of pages) {
     // Re-read text here to avoid caching issues and simulate fresh parse
     const text = readText(page);
@@ -133,14 +132,7 @@ Deno.test("memory usage test for large pages", () => {
     simplifyHtml(text);
     const finalMemory = Deno.memoryUsage().rss;
     const diffMb = (finalMemory - initialMemory) / 1024 / 1024;
-
-    console.log(`Memory usage for ${page}: ${diffMb.toFixed(2)} MB`);
-
-    // Assert that memory usage is not explosively high (e.g., > 150MB)
-    // The regression was causing ~190MB usage.
-    // We set a threshold of 150MB to catch significant regressions while allowing for some variation
-    // and overhead in the test runner.
-    if (diffMb > 150) {
+    if (diffMb > 10) {
       throw new Error(`Memory usage too high: ${diffMb.toFixed(2)} MB`);
     }
   }

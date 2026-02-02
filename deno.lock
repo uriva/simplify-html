@@ -2,6 +2,8 @@
   "version": "5",
   "specifiers": {
     "jsr:@b-fuze/deno-dom@*": "0.1.49",
+    "jsr:@b-fuze/deno-dom@0.1.49": "0.1.49",
+    "jsr:@b-fuze/deno-dom@0.1.56": "0.1.56",
     "jsr:@std/assert@*": "1.0.13",
     "jsr:@std/internal@^1.0.6": "1.0.6",
     "npm:gamla@124.0.0": "124.0.0",
@@ -15,6 +17,9 @@
   "jsr": {
     "@b-fuze/deno-dom@0.1.49": {
       "integrity": "45c40175fdd1e74ab2d4b54c4fdaabbad6e5b76ee28df12a48e076b3fa7901a9"
+    },
+    "@b-fuze/deno-dom@0.1.56": {
+      "integrity": "8030e2dc1d8750f1682b53462ab893d9c3470f2287feecbe22f44a88c54ab148"
     },
     "@std/assert@1.0.13": {
       "integrity": "ae0d31e41919b12c656c742b22522c32fb26ed0cba32975cb0de2a273cb68b29",
@@ -172,8 +177,10 @@
   },
   "workspace": {
     "dependencies": [
+      "jsr:@b-fuze/deno-dom@0.1.56",
       "jsr:@std/assert@*",
-      "npm:gamla@124.0.0"
+      "npm:gamla@124.0.0",
+      "npm:html-entities@2.6.0"
     ]
   }
 }

@@ -17,8 +17,8 @@ import {
   unique,
   uniqueBy,
 } from "gamla";
-import { DOMParser, type Element, Node } from "jsr:@b-fuze/deno-dom@0.1.49";
-import { decode } from "npm:html-entities@2.6.0";
+import { DOMParser, type Element, Node } from "@b-fuze/deno-dom";
+import { decode } from "html-entities";
 
 type Primitive = { type: "primitive"; value: string; substructures: string[] };
 type Labeled = { type: "labeled"; label: string; children: SimplifiedNode[] };
@@ -54,7 +54,8 @@ const isElement = (node: Node): node is Element =>
 const isTextNode = (node: Node) => node.nodeType === Node.TEXT_NODE;
 
 const isBadNode = (node: Node) =>
-  isElement(node) && ["SCRIPT", "STYLE", "NOSCRIPT"].includes(node.nodeName);
+  isElement(node) &&
+  ["SCRIPT", "STYLE", "NOSCRIPT", "SVG", "HEAD"].includes(node.nodeName);
 
 const detectTitle = (node: Node) =>
   isElement(node) && /h\d/i.test(node.nodeName);
