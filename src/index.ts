@@ -1,3 +1,4 @@
+import { DOMParser, type Element, Node } from "@b-fuze/deno-dom";
 import {
   allmap,
   cond,
@@ -17,7 +18,6 @@ import {
   unique,
   uniqueBy,
 } from "gamla";
-import { DOMParser, type Element, Node } from "@b-fuze/deno-dom";
 import { decode } from "html-entities";
 
 type Primitive = { type: "primitive"; value: string; substructures: string[] };
@@ -212,7 +212,7 @@ const combineLabeled = (x: Unlabeled, y: Labeled) => ({
   children: [...x.children, y],
 });
 
-const getChildren = (node: Node) => [...node.childNodes];
+const getChildren = (node: Node) => isBadNode(node) ? [] : [...node.childNodes];
 
 export const simplifyHtml: (x: string) => SimplifiedNode = pipe(
   (x: string) => new DOMParser().parseFromString(x, "text/html").getRootNode(),
