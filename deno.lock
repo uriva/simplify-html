@@ -3,23 +3,19 @@
   "specifiers": {
     "jsr:@b-fuze/deno-dom@*": "0.1.49",
     "jsr:@b-fuze/deno-dom@0.1.49": "0.1.49",
-    "jsr:@b-fuze/deno-dom@0.1.56": "0.1.56",
     "jsr:@std/assert@*": "1.0.13",
     "jsr:@std/internal@^1.0.6": "1.0.6",
     "npm:gamla@124.0.0": "124.0.0",
-    "npm:html-entities@*": "2.5.2",
+    "npm:html-entities@*": "2.6.0",
     "npm:html-entities@2.6.0": "2.6.0",
     "npm:js-sha256@*": "0.11.0",
-    "npm:node-html-parser@*": "6.1.13",
+    "npm:node-html-parser@*": "7.0.1",
     "npm:node-html-parser@7.0.1": "7.0.1",
     "npm:stable-hash@*": "0.0.4"
   },
   "jsr": {
     "@b-fuze/deno-dom@0.1.49": {
       "integrity": "45c40175fdd1e74ab2d4b54c4fdaabbad6e5b76ee28df12a48e076b3fa7901a9"
-    },
-    "@b-fuze/deno-dom@0.1.56": {
-      "integrity": "8030e2dc1d8750f1682b53462ab893d9c3470f2287feecbe22f44a88c54ab148"
     },
     "@std/assert@1.0.13": {
       "integrity": "ae0d31e41919b12c656c742b22522c32fb26ed0cba32975cb0de2a273cb68b29",
@@ -86,21 +82,11 @@
       "integrity": "sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==",
       "bin": true
     },
-    "html-entities@2.5.2": {
-      "integrity": "sha512-K//PSRMQk4FZ78Kyau+mZurHn3FH0Vwr+H36eE0rPbeYkRRi9YxceYPhuN60UwWorxyKHhqoAJl2OFKa4BVtaA=="
-    },
     "html-entities@2.6.0": {
       "integrity": "sha512-kig+rMn/QOVRvr7c86gQ8lWXq+Hkv6CbAH1hLu+RG338StTpE8Z0b44SDVaqVu7HGKf27frdmUYEs9hTUX/cLQ=="
     },
     "js-sha256@0.11.0": {
       "integrity": "sha512-6xNlKayMZvds9h1Y1VWc0fQHQ82BxTXizWPEtEeGvmOUYpBRy4gbWroHLpzowe6xiQhHpelCQiE7HEdznyBL9Q=="
-    },
-    "node-html-parser@6.1.13": {
-      "integrity": "sha512-qIsTMOY4C/dAa5Q5vsobRpOOvPfC4pB61UVW2uSwZNUp0QU/jCekTal1vMmbO0DgdHeLUJpv/ARmDqErVxA3Sg==",
-      "dependencies": [
-        "css-select",
-        "he"
-      ]
     },
     "node-html-parser@7.0.1": {
       "integrity": "sha512-KGtmPY2kS0thCWGK0VuPyOS+pBKhhe8gXztzA2ilAOhbUbxa9homF1bOyKvhGzMLXUoRds9IOmr/v5lr/lqNmA==",
@@ -177,10 +163,10 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@b-fuze/deno-dom@0.1.56",
       "jsr:@std/assert@*",
       "npm:gamla@124.0.0",
-      "npm:html-entities@2.6.0"
+      "npm:html-entities@2.6.0",
+      "npm:node-html-parser@7.0.1"
     ]
   }
 }
